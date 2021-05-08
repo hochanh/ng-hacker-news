@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "NODE_ENV=production ng build --prod",
+    "build": "NODE_ENV=production ng build --prod --base-href 'https://<username>.github.io/ng-hacker-news/' --output-path=docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
