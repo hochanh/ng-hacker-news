@@ -1,10 +1,14 @@
-<article class="w-full p-4 border rounded shadow cursor-pointer hover:shadow-2xl transition-shadow">
-  <h2 class="text-lg font-bold leading-6">{{ item?.title }}</h2>
+<article
+  class="w-full p-4 border rounded shadow cursor-pointer hover:shadow-2xl transition-shadow"
+  (click)="openDetail(item)"
+>
+
+  <h2 class="text-lg font-bold leading-6">{{ item.title }}</h2>
 
   <img
     class="w-full my-2 rounded"
-    src="https://picsum.photos/200?random={{ item?.subtitle }}" alt="{{ item?.title }}"
+    src="https://picsum.photos/400?random={{ item.subtitle }}" alt="{{ item.title }}"
   >
 
-  <a href="{{ item?.url }}" class="text-sm opacity-50">{{ item?.subtitle }}</a>
+  <a href="{{ item.url }}" class="text-sm opacity-50">{{ item.subtitle }}</a>
 </article>
