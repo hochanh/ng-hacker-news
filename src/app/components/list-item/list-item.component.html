@@ -1,8 +1,10 @@
-<article>
-  {{ item?.content }}
-  {{ item?.coverImageUrl }}
-  {{ item?.description }}
-  {{ item?.subtitle }}
-  {{ item?.title }}
-  {{ item?.url }}
+<article class="w-full p-4 border rounded shadow cursor-pointer hover:shadow-2xl transition-shadow">
+  <h2 class="text-lg font-bold leading-6">{{ item?.title }}</h2>
+
+  <img
+    class="w-full my-2 rounded"
+    src="https://picsum.photos/200?random={{ item?.subtitle }}" alt="{{ item?.title }}"
+  >
+
+  <a href="{{ item?.url }}" class="text-sm opacity-50">{{ item?.subtitle }}</a>
 </article>
