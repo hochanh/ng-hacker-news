@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ApiService } from '../../services/api.service';
+import { LoadingService } from '../../services/loading.service';
 import { ListItem } from '../../models/list-item';
 
 @Component({
@@ -12,16 +13,20 @@ import { ListItem } from '../../models/list-item';
 export class ListComponent implements OnInit {
   listItems: Observable<ListItem[]>;
   apiService: ApiService;
+  loadingService: LoadingService;
   showingDetail = false;
   item: ListItem | null;
 
   constructor(
     apiService: ApiService,
+    loadingService: LoadingService,
   ) {
     this.apiService = apiService;
+    this.loadingService = loadingService;
   }
 
   ngOnInit(): void {
+    this.loadingService.isLoading.next(true);
     this.listItems = this.apiService.getListItems();
   }
 
